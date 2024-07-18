@@ -13,6 +13,7 @@ import {
 } from "@/api/pms/brand";
 
 import { BrandQuery, Brand, BrandForm } from "@/api/pms/brand/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm); // 属性名必须和元素的ref属性值一致
 const dataFormRef = ref(ElForm); // 属性名必须和元素的ref属性值一致

@@ -13,6 +13,7 @@ import {
   deleteAdverts,
 } from "@/api/sms/advert";
 import { AdvertQuery, Advert, AdvertForm } from "@/api/sms/advert/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm); // 属性名必须和元素的ref属性值一致
 const dataFormRef = ref(ElForm); // 属性名必须和元素的ref属性值一致
@@ -54,7 +55,7 @@ const {
 
 function handleQuery() {
   state.loading = true;
-  getAdvertPage(state.queryParams).then(({ data }) => {
+  getAdvertPage(state.queryParams).then(({ data }: { data: any }) => {
     state.advertList = data.list;
     state.total = data.total;
     state.loading = false;
@@ -85,7 +86,7 @@ function handleUpdate(row: any) {
     visible: true,
   };
   const advertId = row.id || state.ids;
-  getAdvertForm(advertId).then(({ data }) => {
+  getAdvertForm(advertId).then(({ data }: { data: any }) => {
     state.formData = data;
     validityPeriod.value = [data.beginTime, data.endTime];
   });

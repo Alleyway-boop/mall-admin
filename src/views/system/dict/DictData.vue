@@ -13,6 +13,7 @@ import {
   deleteDict,
 } from "@/api/system/dict";
 import { DictPageVO, DictForm, DictQuery } from "@/api/system/dict/types";
+import { DialogType } from "@/utils";
 
 const props = defineProps({
   typeCode: {

@@ -49,3 +49,8 @@ export function isExternal(path: string) {
 export function setStyleProperty(propName: string, value: string) {
   document.documentElement.style.setProperty(propName, value);
 }
+
+export interface DialogType {
+  title?: string;
+  visible?: boolean;
+}

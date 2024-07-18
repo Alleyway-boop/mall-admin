@@ -11,7 +11,7 @@ export function getCouponPage(
   queryParams: CouponQuery
 ): AxiosPromise<CouponPageResult> {
   return request({
-    url: "/mall-sms/api/v1/coupons/page",
+    url: "/mall-sms/api/v1/coupons/pages",
     method: "get",
     params: queryParams,
   });

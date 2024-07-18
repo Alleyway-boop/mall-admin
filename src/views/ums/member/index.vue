@@ -29,7 +29,7 @@ const { loading, queryParams, memberList, total } = toRefs(state);
 
 function handleQuery() {
   state.loading = true;
-  getMemberPage(state.queryParams).then(({ data }) => {
+  getMemberPage(state.queryParams).then(({ data }: { data: any }) => {
     state.memberList = data.list;
     state.total = data.total;
     state.loading = false;

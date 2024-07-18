@@ -20,6 +20,7 @@ import {
   DictTypeQuery,
   DictTypeForm,
 } from "@/api/system/dict/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm);
 const dataFormRef = ref(ElForm);
@@ -341,3 +342,4 @@ onMounted(() => {
     </el-dialog>
   </div>
 </template>
+import { DialogType } from "@/utils";

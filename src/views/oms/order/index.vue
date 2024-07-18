@@ -7,6 +7,7 @@ defineOptions({
 
 import { getOrderPage, getOrderDetail } from "@/api/oms/order";
 import { Order, OrderQuery } from "@/api/oms/order/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm);
 

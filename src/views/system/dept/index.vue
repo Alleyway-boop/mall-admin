@@ -14,6 +14,7 @@ import {
 } from "@/api/system/dept";
 
 import { DeptVO, DeptForm, DeptQuery } from "@/api/system/dept/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm);
 const deptFormRef = ref(ElForm);

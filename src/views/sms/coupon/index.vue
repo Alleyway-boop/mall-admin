@@ -12,12 +12,13 @@ import {
   addCoupon,
   deleteCoupons,
 } from "@/api/sms/coupon";
-
+import { ElCascaderPanel } from "element-plus";
 import { getCategoryOptions } from "@/api/pms/category";
 import { getSpuPage } from "@/api/pms/goods";
 import { Coupon, CouponForm, CouponQuery } from "@/api/sms/coupon/types";
 import { Goods, GoodsQuery } from "@/api/pms/goods/types";
-
+import ElDialog from "element-plus";
+import { DialogType } from "@/utils";
 const queryFormRef = ref(ElForm);
 const dataFormRef = ref(ElForm);
 const spuCategoryRef = ref(ElCascaderPanel);
@@ -87,7 +88,7 @@ const {
  */
 function handleQuery() {
   state.loading = true;
-  getCouponPage(queryParams.value).then(({ data }) => {
+  getCouponPage(queryParams.value).then(({ data }: { data: any }) => {
     couponList.value = data.list;
     total.value = data.total;
     loading.value = false;
@@ -111,14 +112,14 @@ function handleSelectionChange(selection: any) {
  * 加载商品分类
  */
 async function loadSpuCategoryOptions() {
-  getCategoryOptions().then(({ data }) => {
+  getCategoryOptions().then(({ data }: { data: any }) => {
     spuCategoryOptions.value = data;
   });
 }
 
 async function loadSpuList() {
   const queryParams = { pageNum: 1, pageSize: 10 } as GoodsQuery;
-  getSpuPage(queryParams).then(({ data }) => {
+  getSpuPage(queryParams).then(({ data }: { data: any }) => {
     spuList.value = data.list;
   });
 }
@@ -143,7 +144,7 @@ async function handleUpdate(row: any) {
   await loadSpuCategoryOptions();
   await loadSpuList();
 
-  getCouponForm(id).then(({ data }) => {
+  getCouponForm(id).then(({ data }: { data: any }) => {
     formData.value = data;
     perLimitChecked.value = data.perLimit == -1;
     // 有效期转换
@@ -231,7 +232,7 @@ function handleDelete(row: any) {
 }
 
 function handleSpuQuery() {
-  getSpuPage(queryParams.value).then(({ data }) => {
+  getSpuPage(queryParams.value).then(({ data }: { data: any }) => {
     spuList.value = data.list;
     spuTotal.value = data.total;
   });

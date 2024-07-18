@@ -11,7 +11,7 @@ export function getBrandPage(
   queryParams: BrandQuery
 ): AxiosPromise<BrandPageResult> {
   return request({
-    url: "/mall-pms/api/v1/brands/page",
+    url: "/mall-pms/api/v1/brands/pages",
     method: "get",
     params: queryParams,
   });

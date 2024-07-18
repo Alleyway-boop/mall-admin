@@ -16,6 +16,7 @@ import {
 import { getMenuOptions } from "@/api/system/menu";
 
 import { RolePageVO, RoleForm, RoleQuery } from "@/api/system/role/types";
+import { DialogType } from "@/utils";
 
 const queryFormRef = ref(ElForm);
 const roleFormRef = ref(ElForm);
