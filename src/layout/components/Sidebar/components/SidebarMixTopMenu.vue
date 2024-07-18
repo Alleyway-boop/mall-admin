@@ -35,7 +35,7 @@
 import { usePermissionStore, useAppStore } from "@/store";
 import { translateRouteTitle } from "@/utils/i18n";
 import variables from "@/styles/variables.module.scss";
-import { RouteRecordRaw } from "vue-router";
+import { RouteRecordRaw, useRouter } from "vue-router";
 
 const appStore = useAppStore();
 const permissionStore = usePermissionStore();
@@ -77,7 +77,7 @@ const goToFirstMenu = (menus: RouteRecordRaw[]) => {
 // 初始化顶部菜单
 onMounted(() => {
   mixTopMenus.value = permissionStore.routes.filter(
-    (item) => !item.meta || !item.meta.hidden
+    (item: { meta: { hidden: any; }; }) => !item.meta || !item.meta.hidden
   );
 });
 </script>

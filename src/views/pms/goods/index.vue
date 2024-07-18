@@ -10,6 +10,7 @@ import { getSpuPage, deleteSpu } from "@/api/pms/goods";
 import { getCategoryOptions } from "@/api/pms/category";
 import { moneyFormatter } from "@/utils/filter";
 import { Goods, GoodsQuery } from "@/api/pms/goods/types";
+import { ElTable } from "element-plus";
 
 const dataTableRef = ref(ElTable);
 const router = useRouter();
