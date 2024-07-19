@@ -16,7 +16,7 @@ export const hasPerm: Directive = {
     if (value) {
       const requiredPerms = value; // DOM绑定需要的按钮权限标识
 
-      const hasPerm = perms?.some((perm) => {
+      const hasPerm = perms?.some((perm: any) => {
         return requiredPerms.includes(perm);
       });
 
@@ -41,7 +41,7 @@ export const hasRole: Directive = {
     if (value) {
       const requiredRoles = value; // DOM绑定需要的角色编码
       const { roles } = useUserStoreHook().user;
-      const hasRole = roles.some((perm) => {
+      const hasRole = roles.some((perm: any) => {
         return requiredRoles.includes(perm);
       });
 
